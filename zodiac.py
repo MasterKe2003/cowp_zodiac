@@ -9,12 +9,12 @@ BASE_URL_ALAPI = "https://v2.alapi.cn/api/"
 BASE_URL_VVHAN = "https://api.vvhan.com/api/" #https://api.vvhan.com/
 
 
-@plugins.register(name="star",
-                  desc="star插件",
+@plugins.register(name="zodiac",
+                  desc="zodiac插件",
                   version="1.0",
                   author="masterke",
                   desire_priority=100)
-class star(Plugin):
+class zodiac(Plugin):
     content = None
     config_data = None
     def __init__(self):
@@ -48,7 +48,7 @@ class star(Plugin):
                 return
             
             reply = Reply()
-            result = self.star()
+            result = self.zodiac()
             if result != None:
                 reply.type = ReplyType.TEXT
                 reply.content = result
@@ -60,7 +60,7 @@ class star(Plugin):
                 e_context["reply"] = reply
                 e_context.action = EventAction.BREAK_PASS
 
-    def star(self):
+    def zodiac(self):
         match self.content:
             case "白羊座" | "白羊":
                 zodiac = "aries"

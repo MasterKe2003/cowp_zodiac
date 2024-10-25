@@ -1,1 +1,1 @@
-from .star import *
+from .zodiac import *
